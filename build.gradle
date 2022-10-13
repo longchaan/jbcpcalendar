@@ -29,3 +29,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 */
+allprojects {
+    apply plugin: "java"
+    // apply plugin: "eclipse"
+    apply plugin: "idea"
+}
