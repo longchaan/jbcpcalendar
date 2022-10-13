@@ -20,9 +20,9 @@ gradle-app.setting
 
 # Eclipse Gradle plugin generated files
 # Eclipse Core
-#.project
+.project
 # JDT-specific (Eclipse Java Development Tools)
-#.classpath
+.classpath
 
 ### Gradle Patch ###
 # Java heap dump
@@ -43,7 +43,7 @@ tmp/
 *.swp
 *~.nib
 local.properties
-#.settings/
+.settings/
 .loadpath
 .recommenders
 
