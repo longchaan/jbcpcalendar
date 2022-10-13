@@ -31,6 +31,6 @@ dependencies {
 */
 allprojects {
     apply plugin: "java"
-    // apply plugin: "eclipse"
+    apply plugin: "eclipse"
     apply plugin: "idea"
 }

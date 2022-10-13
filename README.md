@@ -91,3 +91,28 @@ IntelliJ IDEA Version 2017.3 [(https://www.jetbrains.com/idea/download/other.htm
 [2017.3.7 - Windows x64 ZIP Archive (zip)](https://download.jetbrains.com/idea/ideaIC-2017.3.7.win.zip)
 
 [2017.3.7 - macOS (dmg)](https://download.jetbrains.com/idea/ideaIC-2017.3.7.dmg)
+
+
+### Spring Tool Suite or Eclipse
+
+STS version 3.9.1 is based on Eclipse Oxygen 1a (4.7.1a)
+
+**[Spring Tool Suite (STS) 3.9.1](https://dist.springsource.com/release/STS/index.html)**
+
+Windows [spring-tool-suite-3.9.1.RELEASE-e4.7.1a-win32.zip](https://dist.springsource.com/release/STS/3.9.1.RELEASE/dist/e4.7/spring-tool-suite-3.9.1.RELEASE-e4.7.1a-win32.zip)
+
+Windows (64bit) [spring-tool-suite-3.9.1.RELEASE-e4.7.1a-win32-x86_64.zip](https://dist.springsource.com/release/STS/3.9.1.RELEASE/dist/e4.7/spring-tool-suite-3.9.1.RELEASE-e4.7.1a-win32-x86_64.zip)
+
+Mac OS X (Cocoa, 64bit) [spring-tool-suite-3.9.1.RELEASE-e4.7.1a-macosx-cocoa-x86_64.dmg](https://dist.springsource.com/release/STS/3.9.1.RELEASE/dist/e4.7/spring-tool-suite-3.9.1.RELEASE-e4.7.1a-macosx-cocoa-x86_64.dmg)
+
+Linux (GTK)  [spring-tool-suite-3.9.1.RELEASE-e4.7.1a-linux-gtk.tar.gz](https://dist.springsource.com/release/STS/3.9.1.RELEASE/dist/e4.7/spring-tool-suite-3.9.1.RELEASE-e4.7.1a-linux-gtk.tar.gz)
+
+Linux (GTK, 64bit) [spring-tool-suite-3.9.1.RELEASE-e4.7.1a-linux-gtk-x86_64.tar.gz](https://dist.springsource.com/release/STS/3.9.1.RELEASE/dist/e4.7/spring-tool-suite-3.9.1.RELEASE-e4.7.1a-linux-gtk-x86_64.tar.gz)
+
+**[Eclipse Oxygen 1a (4.7.1a)](https://www.eclipse.org/downloads/packages/release/oxygen/1a)**
+
+Windows  [32-bit](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-win32.zip)  [x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-win32-x86_64.zip)
+
+macOS  [x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-macosx-cocoa-x86_64.dmg)
+
+Linux  [x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz)
