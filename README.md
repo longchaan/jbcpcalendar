@@ -116,3 +116,48 @@ Windows  [32-bit](https://www.eclipse.org/downloads/download.php?file=/technolog
 macOS  [x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-macosx-cocoa-x86_64.dmg)
 
 Linux  [x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz)
+
+
+## A sample code structure
+
+Each folder is named *chapterNN*, where *NN* is the chapter number.
+
+Each *chapterNN* folder has additional folders containing each milestone project with the format *chapterNN.mm-calendar*, where *NN* is the chapter number and *mm* is the milestone within
+that chapter.
+
+For example, *chapter02.03-calendar* contains the milestone number *03* within *Chapter 2*, Getting Started with Spring Security, of the calendar application. The location of the preceding project would be *~/jbcpcalendar/chapter02/chapter02.03-calendar*.
+
+
+## Importing the samples
+
+Gradle IDE pack [(http://marketplace.eclipse.org/content/gradle-ide-pack)](http://marketplace.eclipse.org/content/gradle-ide-pack)
+
+Buildship Gradle Integration plugin [(http://marketplace.eclipse.org/content/buildship-gradle-integration)](http://marketplace.eclipse.org/content/buildship-gradle-integration)
+
+1. Go to **File** | **Import** and select **Existing Gradle Project**
+2. Click on **Next**, as shown in the **Import Gradle Project**
+3. Click on **Next**, as shown in the **Import Options**
+4. You will see all of the projects listed in the **Import preview**
+5. Click on **Finish**.
+
+
+## Running the samples
+
+### Starting the samples within IDEA
+
+1. Go to **File** | **Run** and select **Edit Configurations...**
+2. You will be presented with options to **Add New Configuration**s. Select the plus (+) sign in the upper-left corner to choose a new **Gradle** configuration
+3. Now, you can give it a name like *chapter15.00 (bootRun)* and select the
+actual milestone directory for this configuration. Finally, enter *bootRun* under
+the **Tasks** option to execute
+4. Select the configuration you want to execute; click on the green **run** button or use the *Shift + F10* key
+
+## Gradle tasks
+
+In *Chapter 1, Anatomy of an Unsafe Application*, and *Chapter 2, Getting Started with Spring Security*, the **Gradle task** to run the project will be **tomcatRun**. For the rest of the chapters in the book, Spring Boot has been used, and the **Gradle task** to start the project will be **bootRun**.
+
+### Starting the samples within STS
+
+In STS, a **Run Configurations** is also created and the same information needs to be included
+for each milestone project to run
+
