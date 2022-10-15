@@ -1,3 +1,42 @@
 /*
  * Chapter 01.00 Calendar
  */
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.5'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: "com.bmuschko.tomcat"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Tomcat Plugin
+    def tomcatVersion = '8.0.42'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+tomcat {
+    httpPort = 8080
+    httpsPort = 8081
+    enableSSL = true
+    contextPath = '/'
+
+    users {
+        user {
+            username = 'admin'
+            password = 'admin'
+            roles = ['developers', 'admin']
+        }
+    }
+}
