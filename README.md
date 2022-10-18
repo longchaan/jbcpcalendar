@@ -9,6 +9,25 @@ Spring Security 3/e 스프링 시큐리티를 이용한 애플리케이션 보�
 Jim Bob Circle Pants Online Calendar (JBCPCalendar.com)
 
 
+# Chapter 2 Getting Started with Spring Security
+
+- 로그인 및 로그아웃 페이지 사용자 정의 customize both the login and logout
+- 표현식 기반 접근 제한 expression-based access controls
+
+## Hello Spring Security
+
+### Importing the sample application
+
+2장의 시작 코드인 chapter02.00-calendar 프로젝트를 IDE로 가져오자.
+
+import the chapter02.00-calendar project into your IDE
+
+각 장의 마일스톤 번호를 체크포인트로 해 코드를 수정해나갈 것
+
+For each chapter, you will find multiple revisions of the code that represent checkpoints
+within the book. 
+
+
 # Additional Reference Material
 
 ## Getting started with the JBCP calendar sample code
