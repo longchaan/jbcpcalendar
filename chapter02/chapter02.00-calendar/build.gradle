@@ -1,3 +1,25 @@
 /*
  * Chapter 02.00 Calendar
  */
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+// Spring Security IO with ensures correct Springframework versions
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:${springIoVersion}'
+    }
+}
