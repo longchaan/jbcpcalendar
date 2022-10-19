@@ -28,6 +28,35 @@ For each chapter, you will find multiple revisions of the code that represent ch
 within the book. 
 
 
+### Updating your dependencies
+
+> Gradle 전이적 의존성 (transitive dependencies)
+
+### Using Spring 4.3 and Spring Security 4.2
+
+스프링 IO Bill Of Materials (BOM) 의존성을 활용해 BOM이 가져온 모든 의존성 버전이 올바르게 작동하는지 확인
+
+```
+build.gradle
+// Spring Security IO with ensures correct Springframework versions
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:${springIoVersion}'
+    }
+}
+dependencies {
+    ···
+}
+```
+
+> STS를 사용하는 경우에는 build.gradle 파일을 업데이트할 때마다 
+> Gradle > Refresh Gradle Project ... > OK를 선택해 모든 의존성을 업데이트하자.
+
+Spring Security Reference [4.2.0.RELEASE](https://docs.spring.io/spring-security/site/docs/4.2.0.RELEASE/reference/htmlsingle) [4.2.x](https://docs.spring.io/spring-security/site/docs/4.2.x/reference/htmlsingle)
+
+Spring Framework Reference [4.3.4.RELEASE](https://docs.spring.io/spring-framework/docs/4.3.4.RELEASE/spring-framework-reference/htmlsingle) [4.3.x](https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle)
+
+
 # Additional Reference Material
 
 ## Getting started with the JBCP calendar sample code
