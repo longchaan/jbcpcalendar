@@ -56,6 +56,21 @@ Spring Security Reference [4.2.0.RELEASE](https://docs.spring.io/spring-security
 
 Spring Framework Reference [4.3.4.RELEASE](https://docs.spring.io/spring-framework/docs/4.3.4.RELEASE/spring-framework-reference/htmlsingle) [4.3.x](https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle)
 
+Spring Security Guides [4.2.3.RELEASE](https://docs.spring.io/spring-security/site/docs/4.2.3.RELEASE/guides/html5) [4.2.x](https://docs.spring.io/spring-security/site/docs/4.2.x/guides/html5)
+
+### Implementing a Spring Security XML configuration file
+
+> **자바 기반 설정 방식**에 대한 지원이 **스프링 3.1**의 스프링 프레임워크에 추가됐다.  
+> **스프링 시큐리티 3.2** 릴리즈 이후부터 XML을 사용하지 않고도 스프링 시큐리티를 쉽게 구성할 수 있는 자바 기반 설정 방식을 지원한다.
+
+스프링 시큐리티 [3.2.0.RC2](https://docs.spring.io/spring-security/site/docs/3.2.0.RC2/reference/htmlsingle)
+
+### Updating your web.xml file
+
+War Plugin [User Manual](https://docs.gradle.org/4.3/userguide/war_plugin.html) [DSL Reference](https://docs.gradle.org/4.3/dsl/org.gradle.api.tasks.bundling.War.html)
+
+Eclipse WTP Plugin [User Manual](https://docs.gradle.org/4.3/userguide/eclipse_plugin.html) [DSL Reference](https://docs.gradle.org/4.3/dsl/org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent.html)
+
 
 # Additional Reference Material
 

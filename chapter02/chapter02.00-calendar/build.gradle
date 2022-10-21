@@ -12,6 +12,8 @@ buildscript {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
 
 repositories {
     mavenCentral()
@@ -25,7 +27,27 @@ dependencyManagement {
 }
 
 dependencies {
+    // Spring Dependencies:
+    compile "org.springframework:spring-webmvc"
+
+    // Spring Security Dependencies
     compile "org.springframework.security:spring-security-config"
     compile "org.springframework.security:spring-security-core"
     compile "org.springframework.security:spring-security-web"
+    // compile "org.springframework.security.oauth:spring-security-oauth2"
+    // org.springframework.security.oauth:spring-security-oauth2:2.0.14.RELEASE
+    // \--- org.springframework:spring-webmvc:4.0.9.RELEASE -> 4.3.11.RELEASE
+
+    providedCompile "javax.servlet:javax.servlet-api"
+
+    // Utils:
+    compile "commons-logging:commons-logging"
+}
+
+eclipse {
+  wtp {
+    component {
+      contextPath = '/'
+    }
+  }
 }
