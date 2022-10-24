@@ -71,6 +71,74 @@ War Plugin [User Manual](https://docs.gradle.org/4.3/userguide/war_plugin.html) 
 
 Eclipse WTP Plugin [User Manual](https://docs.gradle.org/4.3/userguide/eclipse_plugin.html) [DSL Reference](https://docs.gradle.org/4.3/dsl/org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent.html)
 
+**The ContextLoaderListener class**
+
+Servlet 3.0+ initialization
+
+Spring MVC provides the `o.s.w.WebApplicationInitializer` interface
+
+`o.s.w.context.AbstractContextLoaderInitializer`
+
+In Spring MVC, the preferred approach is to extend `o.s.w.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer`.
+
+```
+org.springframework.web.WebApplicationInitializer
+├── org.springframework.web.context.AbstractContextLoaderInitializer
+│   └── org.springframework.web.servlet.support.AbstractDispatcherServletInitializer
+│       └── o.s.w.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer
+└── org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer
+```
+
+**ContextLoaderListener versus DispatcherServlet**
+
+```
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		return new Class[] { SecurityConfig.class }; // Root beans of the parent ApplicationContext
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		return new Class[] { WebMvcConfig.class }; // Child beans of the child ApplicationContext
+	}
+}
+```
+
+**The springSecurityFilterChain filter **
+
+AbstractSecurityWebApplicationInitializer
+
+**The DelegatingFilterProxy class**
+
+web.xml
+
+```
+<filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+**The FilterChainProxy class**
+
+security.xml
+
+`org.springframework.security.web.FilterChainProxy`
+
+Spring Security filters
+
+**Running a secured application**
+
+[http://localhost:8080](http://localhost:8080)
+
 
 # Additional Reference Material
 

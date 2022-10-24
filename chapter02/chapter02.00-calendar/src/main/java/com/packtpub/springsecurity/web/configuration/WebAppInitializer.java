@@ -8,12 +8,12 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { SecurityConfig.class };
+		return new Class[] { SecurityConfig.class }; // Root beans of the parent ApplicationContext
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class[] { WebMvcConfig.class }; // Child beans of the child ApplicationContext
 	}
 
 	@Override

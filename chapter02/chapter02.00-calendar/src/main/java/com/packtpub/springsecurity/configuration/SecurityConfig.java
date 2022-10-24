@@ -11,12 +11,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		return;
+		auth.inMemoryAuthentication() // <user-service>
+				// <user name="user" password="password" authorities="ROLE_USER" />
+				.withUser("user").password("password").roles("USER");
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		return;
+		http.authorizeRequests() // <http>
+				// <intercept-url pattern="/**" access="hasRole('USER')"/>
+				.antMatchers("/**").access("hasRole('USER')")
+				// equivalent to <http auto-config="true">
+				.and().formLogin() // <form-login />
+				.and().httpBasic() // <http-basic />
+				.and().logout() // <logout />
+				// CSRF is enabled by default (will discuss later)
+				.and().csrf().disable(); // <csrf disabled="true" />
 	}
 
 }
