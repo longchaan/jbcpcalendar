@@ -1,0 +1,50 @@
+/*
+ * Chapter 02.01 Calendar
+ */
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+    mavenCentral()
+}
+
+// Spring Security IO with ensures correct Springframework versions
+dependencyManagement {
+    imports {
+        mavenBom "io.spring.platform:platform-bom:${springIoVersion}"
+    }
+}
+
+dependencies {
+    // Spring Dependencies:
+    compile "org.springframework:spring-webmvc"
+
+    // Spring Security Dependencies
+    compile "org.springframework.security:spring-security-config"
+    compile "org.springframework.security:spring-security-core"
+    compile "org.springframework.security:spring-security-web"
+
+    providedCompile "javax.servlet:javax.servlet-api"
+
+    // Utils:
+    compile "commons-logging:commons-logging"
+}
+
+eclipse {
+  wtp {
+    component {
+      contextPath = '/'
+    }
+  }
+}

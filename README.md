@@ -135,9 +135,13 @@ security.xml
 
 Spring Security filters
 
+> Due to the fact that both `DelegatingFilterProxy` and `FilterChainProxy` are the front door to Spring Security, when used in a web application, you would add a debug point when trying to figure out what is happening.
+
 **Running a secured application**
 
 [http://localhost:8080](http://localhost:8080)
+
+> Your code should now look like `chapter02.01-calendar`.
 
 
 # Additional Reference Material

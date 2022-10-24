@@ -23,3 +23,4 @@ include 'chapter01:chapter01.00-calendar'
 
 // Chapter 2: Getting Started with Spring Security
 include 'chapter02:chapter02.00-calendar'
+include 'chapter02:chapter02.01-calendar'
