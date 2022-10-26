@@ -143,6 +143,90 @@ Spring Security filters
 
 > Your code should now look like `chapter02.01-calendar`.
 
+### Customizing login
+
+```
+//src/main/java/com/packtpub/springsecurity/configuration/SecurityConfig.java
+	http.authorizeRequests()
+		···
+		.formLogin()
+			.loginPage("/login/form")
+			.loginProcessingUrl("/login")
+			.failureUrl("/login/form?error")
+			.usernameParameter("username")
+			.passwordParameter("password")
+		···
+```
+```
+//src/main/webapp/WEB-INF/templates/login.html
+
+<div class="container">
+	<!--/*/ <th:block th:include="fragments/header::header"></th:block> /*/-->
+	<form th:action="@{/login}" method="POST" cssClass="form-horizontal">
+		<div th:if="${param.error != null}" class="alert alert-danger">
+			<strong>Failed to login.</strong>
+			<span th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null}">
+				<span th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}">
+					Invalid credentials</span>
+			</span>
+		</div>
+		<div th:if="${param.logout != null}" class="alert alert-success">
+			You have been logged out.
+		</div>
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" autofocus="autofocus" />
+		<label for="password">Password</label>
+		<input type="text" id="password" name="password" />
+		<div class="form-actions">
+			<input id="submit" class="btn" name="submit" type="submit" value="Login" />
+		</div>
+	</form>
+</div>
+```
+```
+//src/main/java/com/packtpub/springsecurity/web/configuration/WebMvcConfig.java
+
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+
+@Configuration
+//@EnableWebMvc
+public class WebMvcConfig extends WebMvcConfigurationSupport {
+
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/login/form")
+			.setViewName("login");
+	}
+
+}
+```
+
+### Configuring logout
+
+```
+//src/main/java/com/packtpub/springsecurity/configuration/SecurityConfig.java
+
+	http.authorizeRequests()
+		···
+		.logout()
+		.logoutUrl("/logout")
+		.logoutSuccessUrl("/login?logout")
+		···
+```
+```
+//src/main/webapp/WEB-INF/templates/fragments/header.html
+
+<div id="navbar" ...>
+	···
+	<ul class="nav navbar-nav pull-right">
+		<li><a id="navLogoutLink" th:href="@{/logout}">Logout</a></li>
+	</ul>
+	···
+</div>
+```
+
+> Your code should now look like `chapter02.02-calendar`.
+
 
 # Additional Reference Material
 

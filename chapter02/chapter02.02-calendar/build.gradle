@@ -1,0 +1,67 @@
+/*
+ * Chapter 02.02 Calendar
+ */
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+    mavenCentral()
+}
+
+// Spring Security IO with ensures correct Springframework versions
+dependencyManagement {
+    imports {
+        mavenBom "io.spring.platform:platform-bom:${springIoVersion}"
+    }
+}
+
+dependencies {
+    // Spring Dependencies:
+    compile "org.springframework:spring-webmvc"
+
+    // Spring Security Dependencies
+    compile "org.springframework.security:spring-security-config"
+    compile "org.springframework.security:spring-security-core"
+    compile "org.springframework.security:spring-security-web"
+
+    providedCompile "javax.servlet:javax.servlet-api"
+
+    // Thymeleaf Spring
+    compile "org.thymeleaf:thymeleaf"
+    compile "org.thymeleaf:thymeleaf-spring4"
+
+    // Utils:
+    compile "commons-logging:commons-logging"
+
+    compile "ch.qos.logback:logback-classic"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+eclipse {
+  wtp {
+    component {
+      contextPath = '/calendar'
+    }
+  }
+}
