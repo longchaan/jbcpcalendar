@@ -254,6 +254,26 @@ match "/events123".
 
 > Your code should now look like `chapter02.03-calendar`.
 
+### Expression-based authorization
+
+**Spring Expression Language (SpEL)**
+
+```
+//src/main/java/com/packtpub/springsecurity/configuration/SecurityConfig.java
+
+	http.authorizeRequests()
+		.antMatchers("/resources/**").access("permitAll")
+		// <intercept-url pattern="/" access="hasAnyRole('ANONYMOUS','USER')"/>
+		// .antMatchers("/").hasAnyRole("ANONYMOUS", "USER")
+		.antMatchers("/login/*").access("hasAnyRole('ANONYMOUS', 'USER')")
+		.antMatchers("/logout/*").access("hasAnyRole('ANONYMOUS', 'USER')")
+		.antMatchers("/admin/*").access("hasRole('ADMIN')")
+		.antMatchers("/events/").access("hasRole('ADMIN')")
+		.antMatchers("/**").access("hasRole('USER')")
+```
+
+> Your code should now look like `chapter02.04-calendar`.
+
 
 # Additional Reference Material
 
