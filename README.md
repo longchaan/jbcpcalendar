@@ -227,6 +227,33 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
 > Your code should now look like `chapter02.02-calendar`.
 
+### The page isn't redirecting properly
+
+1. We request the Welcome page in the browser.
+2. Spring Security sees that the Welcome page requires the USER role and that we are not authenticated, so it __redirects__ the browser to the __Login page__.
+
+there are __too many redirects__ occurring
+
+### Basic role-based authorization
+
+> Spring Security takes care of the context root transparently
+
+In Spring Security 4,2, you can specify multiple RequestMatcher entries using a builder pattern
+
+- AntPathMatcher  
+  `?` matches a single character.  
+  `*` matches zero or more characters, excluding /.  
+  `**` matches zero or more directories in a path.  
+  
+  The pattern "/events/**" matches "/events", "/events/", "/events/1", and "/events/1/form?test=1"; it does not
+match "/events123".  
+  The pattern "/events*" matches "/events", and "/events123"; it does not match "/events/" or "/events/1".  
+  The pattern "/events\*/**" matches "/events", "/events/", "/events/1", "/events123", "/events123/456", and "/events/1/form?test=1".  
+  
+    - Just as each http method is considered from `top to bottom`, so are the antMatchers() methods. This means it is important to specify `the most specific pattern  first`.
+
+> Your code should now look like `chapter02.03-calendar`.
+
 
 # Additional Reference Material
 
